@@ -2,7 +2,6 @@ package com.client;
 
 
 import javax.swing.*;
-
 /**
  * Hello world!
  *
@@ -15,7 +14,6 @@ public class App
         simplyService service = new Proxy();
 
         callService(service);
-
     }
 
 
