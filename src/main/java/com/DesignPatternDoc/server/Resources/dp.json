@@ -1,0 +1,12 @@
+[
+    {
+        "title": "Reference Monitor",
+        "description": "in un ambiente in cui si hanno dati o risorse, bisogna imporre restrizioni di accesso. Il pattern descrive come definire un’astrazione che intercetta le richieste e controlla la conformità con le autorizzazioni",
+        "imagePath" : "/Resources/uml/Reference monitor.jpg"
+    },
+    {
+        "title": "Role Based Access Control",
+        "description": "descrive come gli utenti possono acquisire i diritti in base alle funzioni del loro lavoro o dei compiti loro assegnati ",
+        "imagePath" : "/Resources/uml/Role based AC.jpg"
+    }
+]
