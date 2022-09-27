@@ -1,12 +1,27 @@
 [
     {
+        "title": "Proxy",
+        "description": "Permette di controllare gli accessi ad un oggetto target attraverso un surrogato, in modo trasparente per i client.",
+        "imagePath" : "/Resources/uml/Proxy.png"
+    },
+    {
+        "title": "Protection Proxy",
+        "description": "Il controllo degli accessi è utilizzato per verificare le autorizzazioni dall'oggetto surrogato, facendo uso di un ulteriore servizio che fornisce le regole di autorizzazione.",
+        "imagePath" : "/Resources/uml/Reference monitor.png"
+    },
+    {
         "title": "Reference Monitor",
-        "description": "in un ambiente in cui si hanno dati o risorse, bisogna imporre restrizioni di accesso. Il pattern descrive come definire un’astrazione che intercetta le richieste e controlla la conformità con le autorizzazioni",
-        "imagePath" : "/Resources/uml/Reference monitor.jpg"
+        "description": "Definisce una astrazione che intercetta le richieste, controlla le autorizzazioni ed inoltra le richieste conformi all'oggetto protetto. Funge da Enforcement Point.",
+        "imagePath" : "/Resources/uml/Reference monitor.png"
     },
     {
         "title": "Role Based Access Control",
-        "description": "descrive come gli utenti possono acquisire i diritti in base alle funzioni del loro lavoro o dei compiti loro assegnati ",
-        "imagePath" : "/Resources/uml/Role based AC.jpg"
+        "description": "Controlla gli accessi agli ogetti protetti secondo delle autrizzazioni non basate sul singolo utente ma su uno o più ruoli ai quali esso appartiene.",
+        "imagePath" : "/Resources/uml/Role based AC.png"
+    },
+    {
+        "title": "Authenticator",
+        "description": "Verifica l'identità degli utenti che vogliono accedere ad un sistema tramite un unico punto di accesso, offrendo il miglior compromesso tra sicurezza e prestazioni.",
+        "imagePath" : "/Resources/uml/Authenticator.png"
     }
 ]
