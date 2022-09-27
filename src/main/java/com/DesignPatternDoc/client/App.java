@@ -58,10 +58,8 @@ public class App {
     private static void addComponentsToPane(Container pane){
         pane.setLayout(new BoxLayout(pane, BoxLayout.Y_AXIS));
         pane.add(Box.createVerticalGlue());
-        //comboBox.setSize(100, 40);
         setComboBoxListener();
         JPanel comboBoxWrapper = new JPanel();
-        
         comboBoxWrapper.add( comboBox );
         pane.add(comboBoxWrapper);
         setDpTitle();
@@ -70,8 +68,7 @@ public class App {
         pane.add(dpDescription);
         setPicLabel();
         pane.add(picLabel);
-        //wrapper.setSize(100, 40);
-        //pane.add(pane);
+
     }
 
 
