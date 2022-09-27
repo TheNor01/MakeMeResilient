@@ -18,7 +18,7 @@ import java.awt.image.BufferedImage;
 public class Service extends UnicastRemoteObject implements DPDocumentationService {
 
     Map<String,DesignPatternDoc> dps = new HashMap<String,DesignPatternDoc>();
-    private final String basePath = "./MakeMeResilient/src/main/java/com/DesignPatternDoc/server/";
+    private final String basePath = "./src/main/java/com/DesignPatternDoc/server/";
     public Service() throws RemoteException{
         super();
         getJsonData();
