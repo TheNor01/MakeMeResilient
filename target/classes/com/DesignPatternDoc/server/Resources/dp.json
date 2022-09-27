@@ -1,12 +1,12 @@
 [
     {
         "title": "Proxy",
-        "description": "<html> Permette di controllare gli accessi ad un oggetto target attraverso un <br> surrogato, in modo trasparente per i client.</html>",
+        "description": "Permette di controllare gli accessi ad un oggetto target attraverso un surrogato, in modo trasparente per i client.",
         "imagePath" : "/Resources/uml/Proxy.png"
     },
     {
         "title": "Protection Proxy",
-        "description": "<html> Il controllo degli accessi è utilizzato per verificare le autorizzazioni <br> dall'oggetto surrogato, facendo uso di un ulteriore servizio che fornisce le regole di autorizzazione. </html>",
+        "description": "Il controllo degli accessi è utilizzato per verificare le autorizzazioni dall'oggetto surrogato, facendo uso di un ulteriore servizio che fornisce le regole di autorizzazione.",
         "imagePath" : "/Resources/uml/Reference monitor.png"
     },
     {
@@ -23,5 +23,10 @@
         "title": "Authenticator",
         "description": "Verifica l'identità degli utenti che vogliono accedere ad un sistema tramite un unico punto di accesso, offrendo il miglior compromesso tra sicurezza e prestazioni.",
         "imagePath" : "/Resources/uml/Authenticator.png"
+    },
+    {
+        "title": "Forward Receiver",
+        "description": "Permette la comunicazione tra peer, che potrebbero agire offrendo un servizio o richiedendo un servizio.  La complessità relativa a rintracciare via rete l'oggetto remoto è gestita da un componenti appositi, forwarders e receivers, che incapsulano la logica utile alla comunicazione. Se accoppiato al Remote Proxy ffre in modo del tutto trasparente al client la possibilità di comunicare con un oggetto remoto. ",
+        "imagePath" : "/Resources/uml/ForwarderReceiver.png"
     }
 ]

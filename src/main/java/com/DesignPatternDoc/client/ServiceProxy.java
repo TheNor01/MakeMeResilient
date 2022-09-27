@@ -23,17 +23,15 @@ public class ServiceProxy implements DPDocumentationInterface {
         catch (RemoteException | MalformedURLException | NotBoundException | InterruptedException e){
             System.err.println(e);
         }
-
     }
 
     @Override
     public String[] getDPNames() {
         try{
-            System.out.println("testtest");
             return service.getDPNames();
-        }catch(Exception e) {
+        } catch(Exception e) {
             System.err.println(e);
-            return new  String[] {"ciao"};
+            return new  String[] {""};
             //throw e; //add timer
         }
     }
