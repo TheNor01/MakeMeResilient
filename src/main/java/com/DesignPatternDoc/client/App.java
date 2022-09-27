@@ -92,10 +92,7 @@ public class App {
             @Override
             public void itemStateChanged(ItemEvent itemEvent) {
               int state = itemEvent.getStateChange();
-              System.out.println((state == ItemEvent.SELECTED) ? "Selected" : "Deselected");
-              System.out.println("Item: " + itemEvent.getItem());
               ItemSelectable is = itemEvent.getItemSelectable();
-              System.out.println(", Selected: " + selectedString(is));
               onSelectChanges(selectedString(is));
             }
           };
@@ -121,16 +118,12 @@ public class App {
         String[] dpNames = service.getDPNames();
         for (String name : dpNames) {
             comboBox.addItem(name);
-            System.out.println(name);
         }
         DesignPatternDoc doc = service.getDPDocumentation(dpNames[0]);
         dpTitle.setText(doc.title);
         dpDescription.setText(doc.description);
-        //dpDescription.setEditable(false);
         String imageBase64 = service.getUMLDiagram(dpNames[0]);
-        //System.out.println("image: " + imageBase64);
         BufferedImage img = getImageFromBase64(imageBase64);
-        System.out.println("image: " + img);
         if(img != null)
             setImage(img);
 
@@ -146,16 +139,13 @@ public class App {
          dpTitle.setText(dpDoc.title);
          dpDescription.setText(dpDoc.description);
          String imageBase64 = service.getUMLDiagram(selection);
-        //System.out.println("image: " + imageBase64);
         BufferedImage img = getImageFromBase64(imageBase64);
-        System.out.println("image: " + img);
         if(img != null)
             setImage(img);
     }
 
     static BufferedImage getImageFromBase64(String base64){
         if(base64.equals("")) return null;
-        System.out.println(base64);
         String base64Image = base64;
         try{
             base64Image = base64.split(",")[1];
@@ -166,7 +156,6 @@ public class App {
             byte[] imageBytes = Base64.getDecoder().decode(base64Image);
             return ImageIO.read(new ByteArrayInputStream(imageBytes));
         } catch (IOException e) {
-            System.out.println("exception");
             e.printStackTrace();
             return null;     
         }
@@ -174,7 +163,6 @@ public class App {
 
 
     static void setImage(BufferedImage img){ 
-        System.out.println("SETTING IMAGE "+ picLabel.getWidth());
         Image dimg = img.getScaledInstance(600, 300, img.SCALE_SMOOTH);
         ImageIcon imageIcon = new ImageIcon(dimg);
         picLabel.setIcon(imageIcon);
