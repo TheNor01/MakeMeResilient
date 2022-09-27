@@ -25,9 +25,9 @@ import com.DesignPatternDoc.DataContracts.DPDocumentationInterface;
  */
 public class App {
     static JComboBox comboBox = new JComboBox<String>();
-    static JLabel dpDescription = new JLabel();
-    static JLabel dpTitle = new JLabel();
-    static JLabel picLabel = new JLabel();
+    static JTextArea dpDescription = new JTextArea("");
+    static JLabel dpTitle = new JLabel("", JLabel.CENTER);
+    static JLabel picLabel = new JLabel("", JLabel.CENTER);
 
 
     //CHANGED, prima vi era proxy
@@ -57,31 +57,35 @@ public class App {
 
     private static void addComponentsToPane(Container pane){
         pane.setLayout(new BoxLayout(pane, BoxLayout.Y_AXIS));
+        pane.add(Box.createVerticalGlue());
         //comboBox.setSize(100, 40);
         setComboBoxListener();
-        JPanel wrapper = new JPanel();
-        wrapper.add( comboBox );
-        //wrapper.setSize(100, 40);
-        pane.add(wrapper);
-     
+        JPanel comboBoxWrapper = new JPanel();
+        
+        comboBoxWrapper.add( comboBox );
+        pane.add(comboBoxWrapper);
         setDpTitle();
         pane.add(dpTitle);
         setDpDescription();
         pane.add(dpDescription);
-        
         setPicLabel();
         pane.add(picLabel);
+        //wrapper.setSize(100, 40);
+        //pane.add(pane);
     }
 
 
     private static void setDpDescription() {
         dpDescription.setFont(new FontUIResource("Courier", FontUIResource.PLAIN,12));
         addMargin(dpDescription, 10,50,10,50);
+        dpDescription.setLineWrap(true);
     }
 
 
     private static void setDpTitle() {
+        
         dpTitle.setFont(new FontUIResource("Courier", FontUIResource.BOLD,24));
+        dpTitle.setAlignmentX(JLabel.CENTER_ALIGNMENT);
         addMargin(dpTitle, 10,50,10,50);
     }
 
@@ -105,6 +109,7 @@ public class App {
     static void setPicLabel(){
 
         picLabel.setSize(600, 300);
+        picLabel.setAlignmentX(JLabel.CENTER_ALIGNMENT);
         addMargin(picLabel, 20,20,50,20); 
         //setImage();
     }
@@ -124,6 +129,7 @@ public class App {
         DesignPatternDoc doc = service.getDPDocumentation(dpNames[0]);
         dpTitle.setText(doc.title);
         dpDescription.setText(doc.description);
+        //dpDescription.setEditable(false);
         String imageBase64 = service.getUMLDiagram(dpNames[0]);
         //System.out.println("image: " + imageBase64);
         BufferedImage img = getImageFromBase64(imageBase64);

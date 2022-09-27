@@ -1,12 +1,12 @@
 [
     {
         "title": "Proxy",
-        "description": "Permette di controllare gli accessi ad un oggetto target attraverso un surrogato, in modo trasparente per i client.",
+        "description": "<html> Permette di controllare gli accessi ad un oggetto target attraverso un <br> surrogato, in modo trasparente per i client.</html>",
         "imagePath" : "/Resources/uml/Proxy.png"
     },
     {
         "title": "Protection Proxy",
-        "description": "Il controllo degli accessi è utilizzato per verificare le autorizzazioni dall'oggetto surrogato, facendo uso di un ulteriore servizio che fornisce le regole di autorizzazione.",
+        "description": "<html> Il controllo degli accessi è utilizzato per verificare le autorizzazioni <br> dall'oggetto surrogato, facendo uso di un ulteriore servizio che fornisce le regole di autorizzazione. </html>",
         "imagePath" : "/Resources/uml/Reference monitor.png"
     },
     {
