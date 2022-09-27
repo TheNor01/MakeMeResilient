@@ -33,7 +33,6 @@ public class Service extends UnicastRemoteObject implements DPDocumentationServi
             //Read JSON file
             Object obj = jsonParser.parse(reader);
             JSONArray objList = (JSONArray) obj;
-            //System.out.println(objList);
             //Iterate over  array
             objList.forEach(el -> saveObject( (JSONObject) el ) );
  
@@ -49,7 +48,6 @@ public class Service extends UnicastRemoteObject implements DPDocumentationServi
     @Override
     public String[] getDPNames() throws RemoteException {
         String[] names = dps.keySet().toArray(new String[dps.size()]);
-        System.out.println(names);
         return  names;
     }
 
