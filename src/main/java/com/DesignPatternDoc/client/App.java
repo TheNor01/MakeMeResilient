@@ -24,7 +24,7 @@ import com.DesignPatternDoc.DataContracts.DPDocumentationInterface;
  *
  */
 public class App {
-    static JComboBox comboBox = new JComboBox<String>();
+    static JComboBox<String> comboBox = new JComboBox<String>();
     static JTextArea dpDescription = new JTextArea("");
     static JLabel dpTitle = new JLabel("", JLabel.CENTER);
     static JLabel picLabel = new JLabel("", JLabel.CENTER);

@@ -18,6 +18,7 @@ public class ServiceProxy implements DPDocumentationInterface {
         System.out.println("PROXY CONSTUCTOR");
         try{
             TimeUnit.SECONDS.sleep(5);
+            //the nly point in wich the lookup will 
             service = (DPDocumentationService) Naming.lookup(serviceNameRemote);
         }
         catch (RemoteException | MalformedURLException | NotBoundException | InterruptedException e){
@@ -30,9 +31,7 @@ public class ServiceProxy implements DPDocumentationInterface {
         try{
             return service.getDPNames();
         } catch(Exception e) {
-            System.err.println(e);
             return new  String[] {""};
-            //throw e; //add timer
         }
     }
 
@@ -42,9 +41,7 @@ public class ServiceProxy implements DPDocumentationInterface {
         try{
             return service.getUMLDiagram(name);
         }catch(Exception e) {
-            System.err.println(e);
             return "";
-            //add timer
         }
     }
 
@@ -54,9 +51,7 @@ public class ServiceProxy implements DPDocumentationInterface {
         try{
             return service.getDPDocumentation(name);
         }catch(Exception e) {
-            System.err.println(e);
             return new DesignPatternDoc("","","");
-            //add timer
         }
     }
 }
